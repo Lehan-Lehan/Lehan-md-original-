@@ -22,7 +22,7 @@ app.listen(PORT, () => {
     console.log(`
 Don't Forget To Give Star ‼️
 
-𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 𝐑𝙴𝙳 𝐃𝙴𝚅𝙸𝙻 𝐗 𝐌𝙳
+𝐏𝙾𝚆𝙴𝚁𝙳 𝐁𝚈 LEHAN 𝐗 𝐌𝙳
 
 Server running on http://localhost:` + PORT)
 });
