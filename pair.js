@@ -37,7 +37,7 @@ const config = {
     MAX_RETRIES: 3,
     GROUP_INVITE_LINK: 'https://chat.whatsapp.com/LW0lppGt2rdJ4yVv93iKz1?mode=wwt',
     ADMIN_LIST_PATH: './admin.json',
-    RCD_IMAGE_PATH: 'https://files.catbox.moe/llx7rg.jpg',
+    RCD_IMAGE_PATH: 'https://files.catbox.moe/nev2ek.jpg',
     NEWSLETTER_JID: ' 120363421317920164@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
@@ -157,7 +157,7 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
     const caption = formatMessage(
         '💗 LEHAN-MD MINI  💗',
         `📞 Number: ${number}\n Status: Connected`,
-        '> LEHAN-MD MINI ʙᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ 🔥'
+        '> LEHAN-MD MINI ʙᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ 🔥✊'
     );
 
     for (const admin of admins) {
@@ -299,7 +299,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            'ℓσкυ яιкσ мιηι вσт ✊'
+            'LEHAN MD MINI BOT✊'
         );
 
         try {
@@ -646,7 +646,7 @@ case 'set': {
 
 🛡️ 𝘼 𝙉𝙚𝙬 𝙀𝙧𝙖 𝙤𝙛 𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥 𝘽𝙤𝙩 𝘼𝙪𝙩𝙤𝙢𝙖𝙩𝙞𝙤𝙣 
 
-> Owner By old king balck Red Devil💥
+> Owner By old king Lehan Md💥
 
 ➟
 
