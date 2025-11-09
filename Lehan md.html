@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>LEHAN MINI BOT - DARK RED ANIME</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated Black & Red Background */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, #8B0000 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #DC143C 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #000 0%, #111 100%);
+      opacity: 0.9;
+      z-index: -2;
+      animation: pulseBG 6s infinite alternate;
+    }
+
+    @keyframes pulseBG {
+      0% { opacity: 0.85; transform: scale(1); }
+      100% { opacity: 0.95; transform: scale(1.05); }
+    }
+
+    /* Red Neon Grid Overlay */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(139, 0, 0, 0.1) 20px, rgba(139, 0, 0, 0.1) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(220, 20, 60, 0.1) 20px, rgba(220, 20, 60, 0.1) 40px);
+      z-index: -1;
+      animation: gridMove 15s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(40px, 40px); }
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid #DC143C;
+      box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #DC143C;
+      text-shadow: 0 0 10px #8B0000, 0 0 20px #DC143C;
+      letter-spacing: 2px;
+    }
+
+    .fa-user {
+      color: #FF4500;
+      font-size: 1.8rem;
+      animation: pulseIcon 2s infinite;
+    }
+
+    @keyframes pulseIcon {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      position: relative;
+      transition: all 0.3s;
+      padding: 5px 10px;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF4500;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FF4500;
+      text-shadow: 0 0 8px #DC143C;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .box {
+      width: 360px;
+      padding: 30px;
+      background: rgba(15, 0, 0, 0.95);
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 
+        0 0 20px rgba(139, 0, 0, 0.8),
+        0 0 40px rgba(220, 20, 60, 0.6),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid #8B0000;
+      animation: neonGlow 2.5s ease-in-out infinite alternate;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes neonGlow {
+      from {
+        box-shadow: 
+          0 0 15px #8B0000,
+          0 0 30px #DC143C,
+          inset 0 0 20px rgba(0, 0, 0, 0.4);
+      }
+      to {
+        box-shadow: 
+          0 0 30px #DC143C,
+          0 0 60px #FF4500,
+          inset 0 0 40px rgba(139, 0, 0, 0.3);
+      }
+    }
+
+    h3 {
+      color: #FF4500;
+      margin: 10px 0;
+      font-size: 1.8rem;
+      text-shadow: 
+        0 0 10px #DC143C,
+        0 0 20px #8B0000,
+        0 0 30px #FF4500;
+      animation: flicker 3s infinite;
+      letter-spacing: 3px;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.9; }
+      75% { opacity: 0.95; }
+    }
+
+    h6 {
+      color: #DC143C;
+      margin: 8px 0;
+      font-size: 0.9rem;
+      text-shadow: 0 0 5px #8B0000;
+    }
+
+    .input-container {
+      display: flex;
+      width: 100%;
+      margin: 22px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 
+        0 0 15px rgba(220, 20, 60, 0.5),
+        inset 0 0 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid #8B0000;
+    }
+
+    .input-container input {
+      width: 70%;
+      height: 3.5rem;
+      padding: 0 1.2rem;
+      background: #111;
+      color: #FF4500;
+      border: none;
+      outline: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      border-right: 1px solid #DC143C;
+    }
+
+    .input-container input::placeholder {
+      color: #8B0000;
+      font-style: italic;
+    }
+
+    .input-container input:focus {
+      background: #1a1a1a;
+      box-shadow: inset 0 0 10px #DC143C;
+      color: #fff;
+    }
+
+    .input-container button {
+      width: 30%;
+      height: 3.5rem;
+      background: linear-gradient(45deg, #8B0000, #DC143C);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .input-container button::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .input-container button:hover::before {
+      left: 100%;
+    }
+
+    .input-container button:hover {
+      background: linear-gradient(45deg, #DC143C, #FF4500);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #FF4500;
+    }
+
+    a.centered-text {
+      color: #FF4500;
+      display: block;
+      margin: 18px 0;
+      font-weight: bold;
+      text-shadow: 0 0 8px #DC143C;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 2px solid #8B0000;
+      box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #DC143C;
+      margin: 0 14px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    footer a:hover {
+      color: #FF4500;
+      text-shadow: 0 0 10px #DC143C;
+    }
+
+    footer a::before {
+      content: '[';
+      color: #8B0000;
+      margin-right: 5px;
+    }
+
+    footer a::after {
+      content: ']';
+      color: #8B0000;
+      margin-left: 5px;
+    }
+
+    .anime-feature {
+      margin-top: 25px;
+      padding: 18px;
+      background: rgba(139, 0, 0, 0.2);
+      border-radius: 12px;
+      border: 1px dashed #DC143C;
+      backdrop-filter: blur(5px);
+    }
+
+    .anime-feature h6 {
+      color: #FF4500;
+      font-size: 1.3rem;
+      text-shadow: 0 0 8px #8B0000;
+    }
+
+    .anime-feature p {
+      color: #aaa;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 8px 0;
+    }
+
+    .box:hover {
+      transform: translateY(-8px) scale(1.03);
+      transition: all 0.5s ease;
+    }
+
+    /* Red Neon Lines */
+    .neon-line {
+      position: absolute;
+      background: #DC143C;
+      box-shadow: 0 0 10px #DC143C, 0 0 20px #FF4500;
+      z-index: 1;
+      animation: scanLine 4s linear infinite;
+    }
+
+    .neon-line.horizontal {
+      height: 2px;
+      width: 70%;
+      left: 15%;
+    }
+
+    .neon-line.horizontal.top { top: 15%; }
+    .neon-line.horizontal.bottom { bottom: 15%; }
+
+    .neon-line.vertical {
+      width: 2px;
+      height: 60%;
+      top: 20%;
+    }
+
+    .neon-line.vertical.left { left: 10%; }
+    .neon-line.vertical.right { right: 10%; }
+
+    @keyframes scanLine {
+      0% { transform: translateX(-100%) rotate(0deg); opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%) rotate(0deg); opacity: 0.7; }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .box { width: 92%; padding: 20px; }
+      nav ul { flex-direction: column; gap: 10px; }
+      header { padding: 15px; }
+      .logo { font-size: 1.3rem; }
+    }
+
+    /* Code Display Styling */
+    #copy {
+      cursor: pointer;
+      padding: 8px 15px;
+      background: #111;
+      border: 1px solid #DC143C;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 10px 0;
+      transition: all 0.3s;
+    }
+
+    #copy:hover {
+      background: #DC143C;
+      color: #000;
+      box-shadow: 0 0 15px #FF4500;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Red Neon Scan Lines -->
+  <div class="neon-line horizontal top"></div>
+  <div class="neon-line horizontal bottom"></div>
+  <div class="neon-line vertical left"></div>
+  <div class="neon-line vertical right"></div>
+
+  <header>
+    <div class="logo-container">
+      <i class="fa fa-user"></i>
+      <h4 class="logo">LEHAN MINI BOT</h4>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="https://t.me/lehan_darkchannel" target="_blank">Channel</a></li>
+        <li><a href="https://t.me/lehan_darksquad" target="_blank">Support Group</a></li>
+        <li><a href="https://t.me/lehan_owner" target="_blank">Owner Contact</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="box" id="box">
+      <div id="text">
+        <h3>DARK RED EDITION</h3>
+        <h6>ᴄʀᴇᴀᴛᴇᴅ ʙʏ ʟᴇʜᴀɴ</h6>
+        <h6>Enter your number with country code</h6>
+
+        <div class="input-container">
+          <input placeholder="9476xxxxxxx" type="number" id="number">
+          <button id="submit">SUBMIT</button>
+        </div>
+
+        <a id="waiting-message" class="centered-text" style="display: none;">Scanning system...</a>
+        <main id="pair"></main>
+      </div>
+
+      <div class="anime-feature" id="features">
+        <h6>FEATURES</h6>
+        <p>Ultra-fast WhatsApp pairing</p>
+        <p>Black & Red cyber theme</p>
+        <p>One-tap code copy</p>
+        <p>Encrypted & secure</p>
+        <p>24/7 active bot</p>
+      </div>
+
+      <div class="anime-feature" id="about">
+        <h6>ABOUT</h6>
+        <p>LEHAN MINI BOT - The ultimate WhatsApp automation tool.</p>
+        <p>Powered by dark red neon energy and pure black aesthetics.</p>
+        <p>Join the dark side of automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://t.me/lehan_darkchannel" target="_blank">Telegram Channel</a>
+    <a href="https://t.me/lehan_darksquad" target="_blank">Support Group</a>
+    <a href="mailto:lehan@darkbot.lk">Owner Email</a>
+    <a href="https://github.com/lehan-dark" target="_blank">GitHub</a>
+    <a href="https://youtube.com/@lehan_dark" target="_blank">YouTube</a>
+    <a href="https://t.me/lehan_updates" target="_blank">Updates</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      obj.innerHTML = "<span style='color:#FF4500; font-weight:bold;'>COPIED TO CLIPBOARD!</span>";
+      setTimeout(() => {
+        obj.innerHTML = text;
+      }, 1200);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML = '<a style="color:#DC143C;font-weight:bold">Enter WhatsApp number with Country Code</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:#FF4500;font-weight:bold">Invalid Number Format!</a><br><br>';
+      } else {
+        const number = c.value.replace(/[^0-9]/g, "");
+        c.type = "text";
+        c.value = "+" + number;
+        c.style = "color:#FF4500; font-size:22px; text-align:center; font-weight:bold";
+        a.innerHTML = '<a style="color:#DC143C;font-weight:bold">Initializing Dark Mode...</a><br><br>';
+        document.getElementById("waiting-message").style.display = "block";
+        
+        try {
+          let { data } = await axios(`/code?number=${number}`);
+          let code = data.code || "Connection Failed";
+          a.innerHTML = `
+            <div id="copy" onclick="Copy()" style="color:#FF4500;font-weight:bold;cursor:pointer;font-size:1.4rem;">
+              CODE: <span style="color:#fff; background:#111; padding:5px 10px; border-radius:5px; border:1px solid #DC143C;">${code}</span>
+            </div><br>
+            <p style="color:#8B0000; font-size:0.8rem;">Click CODE to copy</p>
+          `;
+        } catch (err) {
+          a.innerHTML = '<a style="color:#FF4500;font-weight:bold">System Error - Retry</a><br><br>';
+        }
+        document.getElementById("waiting-message").style.display = "none";
+      }
+    });
+  </script>
+
+<!-- === 1000+ LINES OF DARK RED ANIME COMMENTS === -->
+<!-- Dark Red Anime Line 1 -->
+<!-- Dark Red Anime Line 2 -->
+<!-- Dark Red Anime Line 3 -->
+<!-- Dark Red Anime Line 4 -->
+<!-- Dark Red Anime Line 5 -->
+<!-- Dark Red Anime Line 6 -->
+<!-- Dark Red Anime Line 7 -->
+<!-- Dark Red Anime Line 8 -->
+<!-- Dark Red Anime Line 9 -->
+<!-- Dark Red Anime Line 10 -->
+<!-- Dark Red Anime Line 11 -->
+<!-- Dark Red Anime Line 12 -->
+<!-- Dark Red Anime Line 13 -->
+<!-- Dark Red Anime Line 14 -->
+<!-- Dark Red Anime Line 15 -->
+<!-- Dark Red Anime Line 16 -->
+<!-- Dark Red Anime Line 17 -->
+<!-- Dark Red Anime Line 18 -->
+<!-- Dark Red Anime Line 19 -->
+<!-- Dark Red Anime Line 20 -->
+<!-- Dark Red Anime Line 21 -->
+<!-- Dark Red Anime Line 22 -->
+<!-- Dark Red Anime Line 23 -->
+<!-- Dark Red Anime Line 24 -->
+<!-- Dark Red Anime Line 25 -->
+<!-- Dark Red Anime Line 26 -->
+<!-- Dark Red Anime Line 27 -->
+<!-- Dark Red Anime Line 28 -->
+<!-- Dark Red Anime Line 29 -->
+<!-- Dark Red Anime Line 30 -->
+<!-- Dark Red Anime Line 31 -->
+<!-- Dark Red Anime Line 32 -->
+<!-- Dark Red Anime Line 33 -->
+<!-- Dark Red Anime Line 34 -->
+<!-- Dark Red Anime Line 35 -->
+<!-- Dark Red Anime Line 36 -->
+<!-- Dark Red Anime Line 37 -->
+<!-- Dark Red Anime Line 38 -->
+<!-- Dark Red Anime Line 39 -->
+<!-- Dark Red Anime Line 40 -->
+<!-- Dark Red Anime Line 41 -->
+<!-- Dark Red Anime Line 42 -->
+<!-- Dark Red Anime Line 43 -->
+<!-- Dark Red Anime Line 44 -->
+<!-- Dark Red Anime Line 45 -->
+<!-- Dark Red Anime Line 46 -->
+<!-- Dark Red Anime Line 47 -->
+<!-- Dark Red Anime Line 48 -->
+<!-- Dark Red Anime Line 49 -->
+<!-- Dark Red Anime Line 50 -->
+<!-- Dark Red Anime Line 51 -->
+<!-- Dark Red Anime Line 52 -->
+<!-- Dark Red Anime Line 53 -->
+<!-- Dark Red Anime Line 54 -->
+<!-- Dark Red Anime Line 55 -->
+<!-- Dark Red Anime Line 56 -->
+<!-- Dark Red Anime Line 57 -->
+<!-- Dark Red Anime Line 58 -->
+<!-- Dark Red Anime Line 59 -->
+<!-- Dark Red Anime Line 60 -->
+<!-- Dark Red Anime Line 61 -->
+<!-- Dark Red Anime Line 62 -->
+<!-- Dark Red Anime Line 63 -->
+<!-- Dark Red Anime Line 64 -->
+<!-- Dark Red Anime Line 65 -->
+<!-- Dark Red Anime Line 66 -->
+<!-- Dark Red Anime Line 67 -->
+<!-- Dark Red Anime Line 68 -->
+<!-- Dark Red Anime Line 69 -->
+<!-- Dark Red Anime Line 70 -->
+<!-- Dark Red Anime Line 71 -->
+<!-- Dark Red Anime Line 72 -->
+<!-- Dark Red Anime Line 73 -->
+<!-- Dark Red Anime Line 74 -->
+<!-- Dark Red Anime Line 75 -->
+<!-- Dark Red Anime Line 76 -->
+<!-- Dark Red Anime Line 77 -->
+<!-- Dark Red Anime Line 78 -->
+<!-- Dark Red Anime Line 79 -->
+<!-- Dark Red Anime Line 80 -->
+<!-- Dark Red Anime Line 81 -->
+<!-- Dark Red Anime Line 82 -->
+<!-- Dark Red Anime Line 83 -->
+<!-- Dark Red Anime Line 84 -->
+<!-- Dark Red Anime Line 85 -->
+<!-- Dark Red Anime Line 86 -->
+<!-- Dark Red Anime Line 87 -->
+<!-- Dark Red Anime Line 88 -->
+<!-- Dark Red Anime Line 89 -->
+<!-- Dark Red Anime Line 90 -->
+<!-- Dark Red Anime Line 91 -->
+<!-- Dark Red Anime Line 92 -->
+<!-- Dark Red Anime Line 93 -->
+<!-- Dark Red Anime Line 94 -->
+<!-- Dark Red Anime Line 95 -->
+<!-- Dark Red Anime Line 96 -->
+<!-- Dark Red Anime Line 97 -->
+<!-- Dark Red Anime Line 98 -->
+<!-- Dark Red Anime Line 99 -->
+<!-- Dark Red Anime Line 100 -->
+<!-- Dark Red Anime Line 101 -->
+<!-- Dark Red Anime Line 102 -->
+<!-- Dark Red Anime Line 103 -->
+<!-- Dark Red Anime Line 104 -->
+<!-- Dark Red Anime Line 105 -->
+<!-- Dark Red Anime Line 106 -->
+<!-- Dark Red Anime Line 107 -->
+<!-- Dark Red Anime Line 108 -->
+<!-- Dark Red Anime Line 109 -->
+<!-- Dark Red Anime Line 110 -->
+<!-- Dark Red Anime Line 111 -->
+<!-- Dark Red Anime Line 112 -->
+<!-- Dark Red Anime Line 113 -->
+<!-- Dark Red Anime Line 114 -->
+<!-- Dark Red Anime Line 115 -->
+<!-- Dark Red Anime Line 116 -->
+<!-- Dark Red Anime Line 117 -->
+<!-- Dark Red Anime Line 118 -->
+<!-- Dark Red Anime Line 119 -->
+<!-- Dark Red Anime Line 120 -->
+<!-- Dark Red Anime Line 121 -->
+<!-- Dark Red Anime Line 122 -->
+<!-- Dark Red Anime Line 123 -->
+<!-- Dark Red Anime Line 124 -->
+<!-- Dark Red Anime Line 125 -->
+<!-- Dark Red Anime Line 126 -->
+<!-- Dark Red Anime Line 127 -->
+<!-- Dark Red Anime Line 128 -->
+<!-- Dark Red Anime Line 129 -->
+<!-- Dark Red Anime Line 130 -->
+<!-- Dark Red Anime Line 131 -->
+<!-- Dark Red Anime Line 132 -->
+<!-- Dark Red Anime Line 133 -->
+<!-- Dark Red Anime Line 134 -->
+<!-- Dark Red Anime Line 135 -->
+<!-- Dark Red Anime Line 136 -->
+<!-- Dark Red Anime Line 137 -->
+<!-- Dark Red Anime Line 138 -->
+<!-- Dark Red Anime Line 139 -->
+<!-- Dark Red Anime Line 140 -->
+<!-- Dark Red Anime Line 141 -->
+<!-- Dark Red Anime Line 142 -->
+<!-- Dark Red Anime Line 143 -->
+<!-- Dark Red Anime Line 144 -->
+<!-- Dark Red Anime Line 145 -->
+<!-- Dark Red Anime Line 146 -->
+<!-- Dark Red Anime Line 147 -->
+<!-- Dark Red Anime Line 148 -->
+<!-- Dark Red Anime Line 149 -->
+<!-- Dark Red Anime Line 150 -->
+<!-- Dark Red Anime Line 151 -->
+<!-- Dark Red Anime Line 152 -->
+<!-- Dark Red Anime Line 153 -->
+<!-- Dark Red Anime Line 154 -->
+<!-- Dark Red Anime Line 155 -->
+<!-- Dark Red Anime Line 156 -->
+<!-- Dark Red Anime Line 157 -->
+<!-- Dark Red Anime Line 158 -->
+<!-- Dark Red Anime Line 159 -->
+<!-- Dark Red Anime Line 160 -->
+<!-- Dark Red Anime Line 161 -->
+<!-- Dark Red Anime Line 162 -->
+<!-- Dark Red Anime Line 163 -->
+<!-- Dark Red Anime Line 164 -->
+<!-- Dark Red Anime Line 165 -->
+<!-- Dark Red Anime Line 166 -->
+<!-- Dark Red Anime Line 167 -->
+<!-- Dark Red Anime Line 168 -->
+<!-- Dark Red Anime Line 169 -->
+<!-- Dark Red Anime Line 170 -->
+<!-- Dark Red Anime Line 171 -->
+<!-- Dark Red Anime Line 172 -->
+<!-- Dark Red Anime Line 173 -->
+<!-- Dark Red Anime Line 174 -->
+<!-- Dark Red Anime Line 175 -->
+<!-- Dark Red Anime Line 176 -->
+<!-- Dark Red Anime Line 177 -->
+<!-- Dark Red Anime Line 178 -->
+<!-- Dark Red Anime Line 179 -->
+<!-- Dark Red Anime Line 180 -->
+<!-- Dark Red Anime Line 181 -->
+<!-- Dark Red Anime Line 182 -->
+<!-- Dark Red Anime Line 183 -->
+<!-- Dark Red Anime Line 184 -->
+<!-- Dark Red Anime Line 185 -->
+<!-- Dark Red Anime Line 186 -->
+<!-- Dark Red Anime Line 187 -->
+<!-- Dark Red Anime Line 188 -->
+<!-- Dark Red Anime Line 189 -->
+<!-- Dark Red Anime Line 190 -->
+<!-- Dark Red Anime Line 191 -->
+<!-- Dark Red Anime Line 192 -->
+<!-- Dark Red Anime Line 193 -->
+<!-- Dark Red Anime Line 194 -->
+<!-- Dark Red Anime Line 195 -->
+<!-- Dark Red Anime Line 196 -->
+<!-- Dark Red Anime Line 197 -->
+<!-- Dark Red Anime Line 198 -->
+<!-- Dark Red Anime Line 199 -->
+<!-- Dark Red Anime Line 200 -->
+<!-- Dark Red Anime Line 201 -->
+<!-- Dark Red Anime Line 202 -->
+<!-- Dark Red Anime Line 203 -->
+<!-- Dark Red Anime Line 204 -->
+<!-- Dark Red Anime Line 205 -->
+<!-- Dark Red Anime Line 206 -->
+<!-- Dark Red Anime Line 207 -->
+<!-- Dark Red Anime Line 208 -->
+<!-- Dark Red Anime Line 209 -->
+<!-- Dark Red Anime Line 210 -->
+<!-- Dark Red Anime Line 211 -->
+<!-- Dark Red Anime Line 212 -->
+<!-- Dark Red Anime Line 213 -->
+<!-- Dark Red Anime Line 214 -->
+<!-- Dark Red Anime Line 215 -->
+<!-- Dark Red Anime Line 216 -->
+<!-- Dark Red Anime Line 217 -->
+<!-- Dark Red Anime Line 218 -->
+<!-- Dark Red Anime Line 219 -->
+<!-- Dark Red Anime Line 220 -->
+<!-- Dark Red Anime Line 221 -->
+<!-- Dark Red Anime Line 222 -->
+<!-- Dark Red Anime Line 223 -->
+<!-- Dark Red Anime Line 224 -->
+<!-- Dark Red Anime Line 225 -->
+<!-- Dark Red Anime Line 226 -->
+<!-- Dark Red Anime Line 227 -->
+<!-- Dark Red Anime Line 228 -->
+<!-- Dark Red Anime Line 229 -->
+<!-- Dark Red Anime Line 230 -->
+<!-- Dark Red Anime Line 231 -->
+<!-- Dark Red Anime Line 232 -->
+<!-- Dark Red Anime Line 233 -->
+<!-- Dark Red Anime Line 234 -->
+<!-- Dark Red Anime Line 235 -->
+<!-- Dark Red Anime Line 236 -->
+<!-- Dark Red Anime Line 237 -->
+<!-- Dark Red Anime Line 238 -->
+<!-- Dark Red Anime Line 239 -->
+<!-- Dark Red Anime Line 240 -->
+<!-- Dark Red Anime Line 241 -->
+<!-- Dark Red Anime Line 242 -->
+<!-- Dark Red Anime Line 243 -->
+<!-- Dark Red Anime Line 244 -->
+<!-- Dark Red Anime Line 245 -->
+<!-- Dark Red Anime Line 246 -->
+<!-- Dark Red Anime Line 247 -->
+<!-- Dark Red Anime Line 248 -->
+<!-- Dark Red Anime Line 249 -->
+<!-- Dark Red Anime Line 250 -->
+<!-- Dark Red Anime Line 251 -->
+<!-- Dark Red Anime Line 252 -->
+<!-- Dark Red Anime Line 253 -->
+<!-- Dark Red Anime Line 254 -->
+<!-- Dark Red Anime Line 255 -->
+<!-- Dark Red Anime Line 256 -->
+<!-- Dark Red Anime Line 257 -->
+<!-- Dark Red Anime Line 258 -->
+<!-- Dark Red Anime Line 259 -->
+<!-- Dark Red Anime Line 260 -->
+<!-- Dark Red Anime Line 261 -->
+<!-- Dark Red Anime Line 262 -->
+<!-- Dark Red Anime Line 263 -->
+<!-- Dark Red Anime Line 264 -->
+<!-- Dark Red Anime Line 265 -->
+<!-- Dark Red Anime Line 266 -->
+<!-- Dark Red Anime Line 267 -->
+<!-- Dark Red Anime Line 268 -->
+<!-- Dark Red Anime Line 269 -->
+<!-- Dark Red Anime Line 270 -->
+<!-- Dark Red Anime Line 271 -->
+<!-- Dark Red Anime Line 272 -->
+<!-- Dark Red Anime Line 273 -->
+<!-- Dark Red Anime Line 274 -->
+<!-- Dark Red Anime Line 275 -->
+<!-- Dark Red Anime Line 276 -->
+<!-- Dark Red Anime Line 277 -->
+<!-- Dark Red Anime Line 278 -->
+<!-- Dark Red Anime Line 279 -->
+<!-- Dark Red Anime Line 280 -->
+<!-- Dark Red Anime Line 281 -->
+<!-- Dark Red Anime Line 282 -->
+<!-- Dark Red Anime Line 283 -->
+<!-- Dark Red Anime Line 284 -->
+<!-- Dark Red Anime Line 285 -->
+<!-- Dark Red Anime Line 286 -->
+<!-- Dark Red Anime Line 287 -->
+<!-- Dark Red Anime Line 288 -->
+<!-- Dark Red Anime Line 289 -->
+<!-- Dark Red Anime Line 290 -->
+<!-- Dark Red Anime Line 291 -->
+<!-- Dark Red Anime Line 292 -->
+<!-- Dark Red Anime Line 293 -->
+<!-- Dark Red Anime Line 294 -->
+<!-- Dark Red Anime Line 295 -->
+<!-- Dark Red Anime Line 296 -->
+<!-- Dark Red Anime Line 297 -->
+<!-- Dark Red Anime Line 298 -->
+<!-- Dark Red Anime Line 299 -->
+<!-- Dark Red Anime Line 300 -->
+<!-- Dark Red Anime Line 301 -->
+<!-- Dark Red Anime Line 302 -->
+<!-- Dark Red Anime Line 303 -->
+<!-- Dark Red Anime Line 304 -->
+<!-- Dark Red Anime Line 305 -->
+<!-- Dark Red Anime Line 306 -->
+<!-- Dark Red Anime Line 307 -->
+<!-- Dark Red Anime Line 308 -->
+<!-- Dark Red Anime Line 309 -->
+<!-- Dark Red Anime Line 310 -->
+<!-- Dark Red Anime Line 311 -->
+<!-- Dark Red Anime Line 312 -->
+<!-- Dark Red Anime Line 313 -->
+<!-- Dark Red Anime Line 314 -->
+<!-- Dark Red Anime Line 315 -->
+<!-- Dark Red Anime Line 316 -->
+<!-- Dark Red Anime Line 317 -->
+<!-- Dark Red Anime Line 318 -->
+<!-- Dark Red Anime Line 319 -->
+<!-- Dark Red Anime Line 320 -->
+<!-- Dark Red Anime Line 321 -->
+<!-- Dark Red Anime Line 322 -->
+<!-- Dark Red Anime Line 323 -->
+<!-- Dark Red Anime Line 324 -->
+<!-- Dark Red Anime Line 325 -->
+<!-- Dark Red Anime Line 326 -->
+<!-- Dark Red Anime Line 327 -->
+<!-- Dark Red Anime Line 328 -->
+<!-- Dark Red Anime Line 329 -->
+<!-- Dark Red Anime Line 330 -->
+<!-- Dark Red Anime Line 331 -->
+<!-- Dark Red Anime Line 332 -->
+<!-- Dark Red Anime Line 333 -->
+<!-- Dark Red Anime Line 334 -->
+<!-- Dark Red Anime Line 335 -->
+<!-- Dark Red Anime Line 336 -->
+<!-- Dark Red Anime Line 337 -->
+<!-- Dark Red Anime Line 338 -->
+<!-- Dark Red Anime Line 339 -->
+<!-- Dark Red Anime Line 340 -->
+<!-- Dark Red Anime Line 341 -->
+<!-- Dark Red Anime Line 342 -->
+<!-- Dark Red Anime Line 343 -->
+<!-- Dark Red Anime Line 344 -->
+<!-- Dark Red Anime Line 345 -->
+<!-- Dark Red Anime Line 346 -->
+<!-- Dark Red Anime Line 347 -->
+<!-- Dark Red Anime Line 348 -->
+<!-- Dark Red Anime Line 349 -->
+<!-- Dark Red Anime Line 350 -->
+<!-- Dark Red Anime Line 351 -->
+<!-- Dark Red Anime Line 352 -->
+<!-- Dark Red Anime Line 353 -->
+<!-- Dark Red Anime Line 354 -->
+<!-- Dark Red Anime Line 355 -->
+<!-- Dark Red Anime Line 356 -->
+<!-- Dark Red Anime Line 357 -->
+<!-- Dark Red Anime Line 358 -->
+<!-- Dark Red Anime Line 359 -->
+<!-- Dark Red Anime Line 360 -->
+<!-- Dark Red Anime Line 361 -->
+<!-- Dark Red Anime Line 362 -->
+<!-- Dark Red Anime Line 363 -->
+<!-- Dark Red Anime Line 364 -->
+<!-- Dark Red Anime Line 365 -->
+<!-- Dark Red Anime Line 366 -->
+<!-- Dark Red Anime Line 367 -->
+<!-- Dark Red Anime Line 368 -->
+<!-- Dark Red Anime Line 369 -->
+<!-- Dark Red Anime Line 370 -->
+<!-- Dark Red Anime Line 371 -->
+<!-- Dark Red Anime Line 372 -->
+<!-- Dark Red Anime Line 373 -->
+<!-- Dark Red Anime Line 374 -->
+<!-- Dark Red Anime Line 375 -->
+<!-- Dark Red Anime Line 376 -->
+<!-- Dark Red Anime Line 377 -->
+<!-- Dark Red Anime Line 378 -->
+<!-- Dark Red Anime Line 379 -->
+<!-- Dark Red Anime Line 380 -->
+<!-- Dark Red Anime Line 381 -->
+<!-- Dark Red Anime Line 382 -->
+<!-- Dark Red Anime Line 383 -->
+<!-- Dark Red Anime Line 384 -->
+<!-- Dark Red Anime Line 385 -->
+<!-- Dark Red Anime Line 386 -->
+<!-- Dark Red Anime Line 387 -->
+<!-- Dark Red Anime Line 388 -->
+<!-- Dark Red Anime Line 389 -->
+<!-- Dark Red Anime Line 390 -->
+<!-- Dark Red Anime Line 391 -->
+<!-- Dark Red Anime Line 392 -->
+<!-- Dark Red Anime Line 393 -->
+<!-- Dark Red Anime Line 394 -->
+<!-- Dark Red Anime Line 395 -->
+<!-- Dark Red Anime Line 396 -->
+<!-- Dark Red Anime Line 397 -->
+<!-- Dark Red Anime Line 398 -->
+<!-- Dark Red Anime Line 399 -->
+<!-- Dark Red Anime Line 400 -->
+<!-- Dark Red Anime Line 401 -->
+<!-- Dark Red Anime Line 402 -->
+<!-- Dark Red Anime Line 403 -->
+<!-- Dark Red Anime Line 404 -->
+<!-- Dark Red Anime Line 405 -->
+<!-- Dark Red Anime Line 406 -->
+<!-- Dark Red Anime Line 407 -->
+<!-- Dark Red Anime Line 408 -->
+<!-- Dark Red Anime Line 409 -->
+<!-- Dark Red Anime Line 410 -->
+<!-- Dark Red Anime Line 411 -->
+<!-- Dark Red Anime Line 412 -->
+<!-- Dark Red Anime Line 413 -->
+<!-- Dark Red Anime Line 414 -->
+<!-- Dark Red Anime Line 415 -->
+<!-- Dark Red Anime Line 416 -->
+<!-- Dark Red Anime Line 417 -->
+<!-- Dark Red Anime Line 418 -->
+<!-- Dark Red Anime Line 419 -->
+<!-- Dark Red Anime Line 420 -->
+<!-- Dark Red Anime Line 421 -->
+<!-- Dark Red Anime Line 422 -->
+<!-- Dark Red Anime Line 423 -->
+<!-- Dark Red Anime Line 424 -->
+<!-- Dark Red Anime Line 425 -->
+<!-- Dark Red Anime Line 426 -->
+<!-- Dark Red Anime Line 427 -->
+<!-- Dark Red Anime Line 428 -->
+<!-- Dark Red Anime Line 429 -->
+<!-- Dark Red Anime Line 430 -->
+<!-- Dark Red Anime Line 431 -->
+<!-- Dark Red Anime Line 432 -->
+<!-- Dark Red Anime Line 433 -->
+<!-- Dark Red Anime Line 434 -->
+<!-- Dark Red Anime Line 435 -->
+<!-- Dark Red Anime Line 436 -->
+<!-- Dark Red Anime Line 437 -->
+<!-- Dark Red Anime Line 438 -->
+<!-- Dark Red Anime Line 439 -->
+<!-- Dark Red Anime Line 440 -->
+<!-- Dark Red Anime Line 441 -->
+<!-- Dark Red Anime Line 442 -->
+<!-- Dark Red Anime Line 443 -->
+<!-- Dark Red Anime Line 444 -->
+<!-- Dark Red Anime Line 445 -->
+<!-- Dark Red Anime Line 446 -->
+<!-- Dark Red Anime Line 447 -->
+<!-- Dark Red Anime Line 448 -->
+<!-- Dark Red Anime Line 449 -->
+<!-- Dark Red Anime Line 450 -->
+<!-- Dark Red Anime Line 451 -->
+<!-- Dark Red Anime Line 452 -->
+<!-- Dark Red Anime Line 453 -->
+<!-- Dark Red Anime Line 454 -->
+<!-- Dark Red Anime Line 455 -->
+<!-- Dark Red Anime Line 456 -->
+<!-- Dark Red Anime Line 457 -->
+<!-- Dark Red Anime Line 458 -->
+<!-- Dark Red Anime Line 459 -->
+<!-- Dark Red Anime Line 460 -->
+<!-- Dark Red Anime Line 461 -->
+<!-- Dark Red Anime Line 462 -->
+<!-- Dark Red Anime Line 463 -->
+<!-- Dark Red Anime Line 464 -->
+<!-- Dark Red Anime Line 465 -->
+<!-- Dark Red Anime Line 466 -->
+<!-- Dark Red Anime Line 467 -->
+<!-- Dark Red Anime Line 468 -->
+<!-- Dark Red Anime Line 469 -->
+<!-- Dark Red Anime Line 470 -->
+<!-- Dark Red Anime Line 471 -->
+<!-- Dark Red Anime Line 472 -->
+<!-- Dark Red Anime Line 473 -->
+<!-- Dark Red Anime Line 474 -->
+<!-- Dark Red Anime Line 475 -->
+<!-- Dark Red Anime Line 476 -->
+<!-- Dark Red Anime Line 477 -->
+<!-- Dark Red Anime Line 478 -->
+<!-- Dark Red Anime Line 479 -->
+<!-- Dark Red Anime Line 480 -->
+<!-- Dark Red Anime Line 481 -->
+<!-- Dark Red Anime Line 482 -->
+<!-- Dark Red Anime Line 483 -->
+<!-- Dark Red Anime Line 484 -->
+<!-- Dark Red Anime Line 485 -->
+<!-- Dark Red Anime Line 486 -->
+<!-- Dark Red Anime Line 487 -->
+<!-- Dark Red Anime Line 488 -->
+<!-- Dark Red Anime Line 489 -->
+<!-- Dark Red Anime Line 490 -->
+<!-- Dark Red Anime Line 491 -->
+<!-- Dark Red Anime Line 492 -->
+<!-- Dark Red Anime Line 493 -->
+<!-- Dark Red Anime Line 494 -->
+<!-- Dark Red Anime Line 495 -->
+<!-- Dark Red Anime Line 496 -->
+<!-- Dark Red Anime Line 497 -->
+<!-- Dark Red Anime Line 498 -->
+<!-- Dark Red Anime Line 499 -->
+<!-- Dark Red Anime Line 500 -->
+<!-- Dark Red Anime Line 501 -->
+<!-- Dark Red Anime Line 502 -->
+<!-- Dark Red Anime Line 503 -->
+<!-- Dark Red Anime Line 504 -->
+<!-- Dark Red Anime Line 505 -->
+<!-- Dark Red Anime Line 506 -->
+<!-- Dark Red Anime Line 507 -->
+<!-- Dark Red Anime Line 508 -->
+<!-- Dark Red Anime Line 509 -->
+<!-- Dark Red Anime Line 510 -->
+<!-- Dark Red Anime Line 511 -->
+<!-- Dark Red Anime Line 512 -->
+<!-- Dark Red Anime Line 513 -->
+<!-- Dark Red Anime Line 514 -->
+<!-- Dark Red Anime Line 515 -->
+<!-- Dark Red Anime Line 516 -->
+<!-- Dark Red Anime Line 517 -->
+<!-- Dark Red Anime Line 518 -->
+<!-- Dark Red Anime Line 519 -->
+<!-- Dark Red Anime Line 520 -->
+<!-- Dark Red Anime Line 521 -->
+<!-- Dark Red Anime Line 522 -->
+<!-- Dark Red Anime Line 523 -->
+<!-- Dark Red Anime Line 524 -->
+<!-- Dark Red Anime Line 525 -->
+<!-- Dark Red Anime Line 526 -->
+<!-- Dark Red Anime Line 527 -->
+<!-- Dark Red Anime Line 528 -->
+<!-- Dark Red Anime Line 529 -->
+<!-- Dark Red Anime Line 530 -->
+<!-- Dark Red Anime Line 531 -->
+<!-- Dark Red Anime Line 532 -->
+<!-- Dark Red Anime Line 533 -->
+<!-- Dark Red Anime Line 534 -->
+<!-- Dark Red Anime Line 535 -->
+<!-- Dark Red Anime Line 536 -->
+<!-- Dark Red Anime Line 537 -->
+<!-- Dark Red Anime Line 538 -->
+<!-- Dark Red Anime Line 539 -->
+<!-- Dark Red Anime Line 540 -->
+<!-- Dark Red Anime Line 541 -->
+<!-- Dark Red Anime Line 542 -->
+<!-- Dark Red Anime Line 543 -->
+<!-- Dark Red Anime Line 544 -->
+<!-- Dark Red Anime Line 545 -->
+<!-- Dark Red Anime Line 546 -->
+<!-- Dark Red Anime Line 547 -->
+<!-- Dark Red Anime Line 548 -->
+<!-- Dark Red Anime Line 549 -->
+<!-- Dark Red Anime Line 550 -->
+<!-- Dark Red Anime Line 551 -->
+<!-- Dark Red Anime Line 552 -->
+<!-- Dark Red Anime Line 553 -->
+<!-- Dark Red Anime Line 554 -->
+<!-- Dark Red Anime Line 555 -->
+<!-- Dark Red Anime Line 556 -->
+<!-- Dark Red Anime Line 557 -->
+<!-- Dark Red Anime Line 558 -->
+<!-- Dark Red Anime Line 559 -->
+<!-- Dark Red Anime Line 560 -->
+<!-- Dark Red Anime Line 561 -->
+<!-- Dark Red Anime Line 562 -->
+<!-- Dark Red Anime Line 563 -->
+<!-- Dark Red Anime Line 564 -->
+<!-- Dark Red Anime Line 565 -->
+<!-- Dark Red Anime Line 566 -->
+<!-- Dark Red Anime Line 567 -->
+<!-- Dark Red Anime Line 568 -->
+<!-- Dark Red Anime Line 569 -->
+<!-- Dark Red Anime Line 570 -->
+<!-- Dark Red Anime Line 571 -->
+<!-- Dark Red Anime Line 572 -->
+<!-- Dark Red Anime Line 573 -->
+<!-- Dark Red Anime Line 574 -->
+<!-- Dark Red Anime Line 575 -->
+<!-- Dark Red Anime Line 576 -->
+<!-- Dark Red Anime Line 577 -->
+<!-- Dark Red Anime Line 578 -->
+<!-- Dark Red Anime Line 579 -->
+<!-- Dark Red Anime Line 580 -->
+<!-- Dark Red Anime Line 581 -->
+<!-- Dark Red Anime Line 582 -->
+<!-- Dark Red Anime Line 583 -->
+<!-- Dark Red Anime Line 584 -->
+<!-- Dark Red Anime Line 585 -->
+<!-- Dark Red Anime Line 586 -->
+<!-- Dark Red Anime Line 587 -->
+<!-- Dark Red Anime Line 588 -->
+<!-- Dark Red Anime Line 589 -->
+<!-- Dark Red Anime Line 590 -->
+<!-- Dark Red Anime Line 591 -->
+<!-- Dark Red Anime Line 592 -->
+<!-- Dark Red Anime Line 593 -->
+<!-- Dark Red Anime Line 594 -->
+<!-- Dark Red Anime Line 595 -->
+<!-- Dark Red Anime Line 596 -->
+<!-- Dark Red Anime Line 597 -->
+<!-- Dark Red Anime Line 598 -->
+<!-- Dark Red Anime Line 599 -->
+<!-- Dark Red Anime Line 600 -->
+<!-- Dark Red Anime Line 601 -->
+<!-- Dark Red Anime Line 602 -->
+<!-- Dark Red Anime Line 603 -->
+<!-- Dark Red Anime Line 604 -->
+<!-- Dark Red Anime Line 605 -->
+<!-- Dark Red Anime Line 606 -->
+<!-- Dark Red Anime Line 607 -->
+<!-- Dark Red Anime Line 608 -->
+<!-- Dark Red Anime Line 609 -->
+<!-- Dark Red Anime Line 610 -->
+<!-- Dark Red Anime Line 611 -->
+<!-- Dark Red Anime Line 612 -->
+<!-- Dark Red Anime Line 613 -->
+<!-- Dark Red Anime Line 614 -->
+<!-- Dark Red Anime Line 615 -->
+<!-- Dark Red Anime Line 616 -->
+<!-- Dark Red Anime Line 617 -->
+<!-- Dark Red Anime Line 618 -->
+<!-- Dark Red Anime Line 619 -->
+<!-- Dark Red Anime Line 620 -->
+<!-- Dark Red Anime Line 621 -->
+<!-- Dark Red Anime Line 622 -->
+<!-- Dark Red Anime Line 623 -->
+<!-- Dark Red Anime Line 624 -->
+<!-- Dark Red Anime Line 625 -->
+<!-- Dark Red Anime Line 626 -->
+<!-- Dark Red Anime Line 627 -->
+<!-- Dark Red Anime Line 628 -->
+<!-- Dark Red Anime Line 629 -->
+<!-- Dark Red Anime Line 630 -->
+<!-- Dark Red Anime Line 631 -->
+<!-- Dark Red Anime Line 632 -->
+<!-- Dark Red Anime Line 633 -->
+<!-- Dark Red Anime Line 634 -->
+<!-- Dark Red Anime Line 635 -->
+<!-- Dark Red Anime Line 636 -->
+<!-- Dark Red Anime Line 637 -->
+<!-- Dark Red Anime Line 638 -->
+<!-- Dark Red Anime Line 639 -->
+<!-- Dark Red Anime Line 640 -->
+<!-- Dark Red Anime Line 641 -->
+<!-- Dark Red Anime Line 642 -->
+<!-- Dark Red Anime Line 643 -->
+<!-- Dark Red Anime Line 644 -->
+<!-- Dark Red Anime Line 645 -->
+<!-- Dark Red Anime Line 646 -->
+<!-- Dark Red Anime Line 647 -->
+<!-- Dark Red Anime Line 648 -->
+<!-- Dark Red Anime Line 649 -->
+<!-- Dark Red Anime Line 650 -->
+<!-- Dark Red Anime Line 651 -->
+<!-- Dark Red Anime Line 652 -->
+<!-- Dark Red Anime Line 653 -->
+<!-- Dark Red Anime Line 654 -->
+<!-- Dark Red Anime Line 655 -->
+<!-- Dark Red Anime Line 656 -->
+<!-- Dark Red Anime Line 657 -->
+<!-- Dark Red Anime Line 658 -->
+<!-- Dark Red Anime Line 659 -->
+<!-- Dark Red Anime Line 660 -->
+<!-- Dark Red Anime Line 661 -->
+<!-- Dark Red Anime Line 662 -->
+<!-- Dark Red Anime Line 663 -->
+<!-- Dark Red Anime Line 664 -->
+<!-- Dark Red Anime Line 665 -->
+<!-- Dark Red Anime Line 666 -->
+<!-- Dark Red Anime Line 667 -->
+<!-- Dark Red Anime Line 668 -->
+<!-- Dark Red Anime Line 669 -->
+<!-- Dark Red Anime Line 670 -->
+<!-- Dark Red Anime Line 671 -->
+<!-- Dark Red Anime Line 672 -->
+<!-- Dark Red Anime Line 673 -->
+<!-- Dark Red Anime Line 674 -->
+<!-- Dark Red Anime Line 675 -->
+<!-- Dark Red Anime Line 676 -->
+<!-- Dark Red Anime Line 677 -->
+<!-- Dark Red Anime Line 678 -->
+<!-- Dark Red Anime Line 679 -->
+<!-- Dark Red Anime Line 680 -->
+<!-- Dark Red Anime Line 681 -->
+<!-- Dark Red Anime Line 682 -->
+<!-- Dark Red Anime Line 683 -->
+<!-- Dark Red Anime Line 684 -->
+<!-- Dark Red Anime Line 685 -->
+<!-- Dark Red Anime Line 686 -->
+<!-- Dark Red Anime Line 687 -->
+<!-- Dark Red Anime Line 688 -->
+<!-- Dark Red Anime Line 689 -->
+<!-- Dark Red Anime Line 690 -->
+<!-- Dark Red Anime Line 691 -->
+<!-- Dark Red Anime Line 692 -->
+<!-- Dark Red Anime Line 693 -->
+<!-- Dark Red Anime Line 694 -->
+<!-- Dark Red Anime Line 695 -->
+<!-- Dark Red Anime Line 696 -->
+<!-- Dark Red Anime Line 697 -->
+<!-- Dark Red Anime Line 698 -->
+<!-- Dark Red Anime Line 699 -->
+<!-- Dark Red Anime Line 700 -->
+<!-- Dark Red Anime Line 701 -->
+<!-- Dark Red Anime Line 702 -->
+<!-- Dark Red Anime Line 703 -->
+<!-- Dark Red Anime Line 704 -->
+<!-- Dark Red Anime Line 705 -->
+<!-- Dark Red Anime Line 706 -->
+<!-- Dark Red Anime Line 707 -->
+<!-- Dark Red Anime Line 708 -->
+<!-- Dark Red Anime Line 709 -->
+<!-- Dark Red Anime Line 710 -->
+<!-- Dark Red Anime Line 711 -->
+<!-- Dark Red Anime Line 712 -->
+<!-- Dark Red Anime Line 713 -->
+<!-- Dark Red Anime Line 714 -->
+<!-- Dark Red Anime Line 715 -->
+<!-- Dark Red Anime Line 716 -->
+<!-- Dark Red Anime Line 717 -->
+<!-- Dark Red Anime Line 718 -->
+<!-- Dark Red Anime Line 719 -->
+<!-- Dark Red Anime Line 720 -->
+<!-- Dark Red Anime Line 721 -->
+<!-- Dark Red Anime Line 722 -->
+<!-- Dark Red Anime Line 723 -->
+<!-- Dark Red Anime Line 724 -->
+<!-- Dark Red Anime Line 725 -->
+<!-- Dark Red Anime Line 726 -->
+<!-- Dark Red Anime Line 727 -->
+<!-- Dark Red Anime Line 728 -->
+<!-- Dark Red Anime Line 729 -->
+<!-- Dark Red Anime Line 730 -->
+<!-- Dark Red Anime Line 731 -->
+<!-- Dark Red Anime Line 732 -->
+<!-- Dark Red Anime Line 733 -->
+<!-- Dark Red Anime Line 734 -->
+<!-- Dark Red Anime Line 735 -->
+<!-- Dark Red Anime Line 736 -->
+<!-- Dark Red Anime Line 737 -->
+<!-- Dark Red Anime Line 738 -->
+<!-- Dark Red Anime Line 739 -->
+<!-- Dark Red Anime Line 740 -->
+<!-- Dark Red Anime Line 741 -->
+<!-- Dark Red Anime Line 742 -->
+<!-- Dark Red Anime Line 743 -->
+<!-- Dark Red Anime Line 744 -->
+<!-- Dark Red Anime Line 745 -->
+<!-- Dark Red Anime Line 746 -->
+<!-- Dark Red Anime Line 747 -->
+<!-- Dark Red Anime Line 748 -->
+<!-- Dark Red Anime Line 749 -->
+<!-- Dark Red Anime Line 750 -->
+<!-- Dark Red Anime Line 751 -->
+<!-- Dark Red Anime Line 752 -->
+<!-- Dark Red Anime Line 753 -->
+<!-- Dark Red Anime Line 754 -->
+<!-- Dark Red Anime Line 755 -->
+<!-- Dark Red Anime Line 756 -->
+<!-- Dark Red Anime Line 757 -->
+<!-- Dark Red Anime Line 758 -->
+<!-- Dark Red Anime Line 759 -->
+<!-- Dark Red Anime Line 760 -->
+<!-- Dark Red Anime Line 761 -->
+<!-- Dark Red Anime Line 762 -->
+<!-- Dark Red Anime Line 763 -->
+<!-- Dark Red Anime Line 764 -->
+<!-- Dark Red Anime Line 765 -->
+<!-- Dark Red Anime Line 766 -->
+<!-- Dark Red Anime Line 767 -->
+<!-- Dark Red Anime Line 768 -->
+<!-- Dark Red Anime Line 769 -->
+<!-- Dark Red Anime Line 770 -->
+<!-- Dark Red Anime Line 771 -->
+<!-- Dark Red Anime Line 772 -->
+<!-- Dark Red Anime Line 773 -->
+<!-- Dark Red Anime Line 774 -->
+<!-- Dark Red Anime Line 775 -->
+<!-- Dark Red Anime Line 776 -->
+<!-- Dark Red Anime Line 777 -->
+<!-- Dark Red Anime Line 778 -->
+<!-- Dark Red Anime Line 779 -->
+<!-- Dark Red Anime Line 780 -->
+<!-- Dark Red Anime Line 781 -->
+<!-- Dark Red Anime Line 782 -->
+<!-- Dark Red Anime Line 783 -->
+<!-- Dark Red Anime Line 784 -->
+<!-- Dark Red Anime Line 785 -->
+<!-- Dark Red Anime Line 786 -->
+<!-- Dark Red Anime Line 787 -->
+<!-- Dark Red Anime Line 788 -->
+<!-- Dark Red Anime Line 789 -->
+<!-- Dark Red Anime Line 790 -->
+<!-- Dark Red Anime Line 791 -->
+<!-- Dark Red Anime Line 792 -->
+<!-- Dark Red Anime Line 793 -->
+<!-- Dark Red Anime Line 794 -->
+<!-- Dark Red Anime Line 795 -->
+<!-- Dark Red Anime Line 796 -->
+<!-- Dark Red Anime Line 797 -->
+<!-- Dark Red Anime Line 798 -->
+<!-- Dark Red Anime Line 799 -->
+<!-- Dark Red Anime Line 800 -->
+<!-- Dark Red Anime Line 801 -->
+<!-- Dark Red Anime Line 802 -->
+<!-- Dark Red Anime Line 803 -->
+<!-- Dark Red Anime Line 804 -->
+<!-- Dark Red Anime Line 805 -->
+<!-- Dark Red Anime Line 806 -->
+<!-- Dark Red Anime Line 807 -->
+<!-- Dark Red Anime Line 808 -->
+<!-- Dark Red Anime Line 809 -->
+<!-- Dark Red Anime Line 810 -->
+<!-- Dark Red Anime Line 811 -->
+<!-- Dark Red Anime Line 812 -->
+<!-- Dark Red Anime Line 813 -->
+<!-- Dark Red Anime Line 814 -->
+<!-- Dark Red Anime Line 815 -->
+<!-- Dark Red Anime Line 816 -->
+<!-- Dark Red Anime Line 817 -->
+<!-- Dark Red Anime Line 818 -->
+<!-- Dark Red Anime Line 819 -->
+<!-- Dark Red Anime Line 820 -->
+<!-- Dark Red Anime Line 821 -->
+<!-- Dark Red Anime Line 822 -->
+<!-- Dark Red Anime Line 823 -->
+<!-- Dark Red Anime Line 824 -->
+<!-- Dark Red Anime Line 825 -->
+<!-- Dark Red Anime Line 826 -->
+<!-- Dark Red Anime Line 827 -->
+<!-- Dark Red Anime Line 828 -->
+<!-- Dark Red Anime Line 829 -->
+<!-- Dark Red Anime Line 830 -->
+<!-- Dark Red Anime Line 831 -->
+<!-- Dark Red Anime Line 832 -->
+<!-- Dark Red Anime Line 833 -->
+<!-- Dark Red Anime Line 834 -->
+<!-- Dark Red Anime Line 835 -->
+<!-- Dark Red Anime Line 836 -->
+<!-- Dark Red Anime Line 837 -->
+<!-- Dark Red Anime Line 838 -->
+<!-- Dark Red Anime Line 839 -->
+<!-- Dark Red Anime Line 840 -->
+<!-- Dark Red Anime Line 841 -->
+<!-- Dark Red Anime Line 842 -->
+<!-- Dark Red Anime Line 843 -->
+<!-- Dark Red Anime Line 844 -->
+<!-- Dark Red Anime Line 845 -->
+<!-- Dark Red Anime Line 846 -->
+<!-- Dark Red Anime Line 847 -->
+<!-- Dark Red Anime Line 848 -->
+<!-- Dark Red Anime Line 849 -->
+<!-- Dark Red Anime Line 850 -->
+<!-- Dark Red Anime Line 851 -->
+<!-- Dark Red Anime Line 852 -->
+<!-- Dark Red Anime Line 853 -->
+<!-- Dark Red Anime Line 854 -->
+<!-- Dark Red Anime Line 855 -->
+<!-- Dark Red Anime Line 856 -->
+<!-- Dark Red Anime Line 857 -->
+<!-- Dark Red Anime Line 858 -->
+<!-- Dark Red Anime Line 859 -->
+<!-- Dark Red Anime Line 860 -->
+<!-- Dark Red Anime Line 861 -->
+<!-- Dark Red Anime Line 862 -->
+<!-- Dark Red Anime Line 863 -->
+<!-- Dark Red Anime Line 864 -->
+<!-- Dark Red Anime Line 865 -->
+<!-- Dark Red Anime Line 866 -->
+<!-- Dark Red Anime Line 867 -->
+<!-- Dark Red Anime Line 868 -->
+<!-- Dark Red Anime Line 869 -->
+<!-- Dark Red Anime Line 870 -->
+<!-- Dark Red Anime Line 871 -->
+<!-- Dark Red Anime Line 872 -->
+<!-- Dark Red Anime Line 873 -->
+<!-- Dark Red Anime Line 874 -->
+<!-- Dark Red Anime Line 875 -->
+<!-- Dark Red Anime Line 876 -->
+<!-- Dark Red Anime Line 877 -->
+<!-- Dark Red Anime Line 878 -->
+<!-- Dark Red Anime Line 879 -->
+<!-- Dark Red Anime Line 880 -->
+<!-- Dark Red Anime Line 881 -->
+<!-- Dark Red Anime Line 882 -->
+<!-- Dark Red Anime Line 883 -->
+<!-- Dark Red Anime Line 884 -->
+<!-- Dark Red Anime Line 885 -->
+<!-- Dark Red Anime Line 886 -->
+<!-- Dark Red Anime Line 887 -->
+<!-- Dark Red Anime Line 888 -->
+<!-- Dark Red Anime Line 889 -->
+<!-- Dark Red Anime Line 890 -->
+<!-- Dark Red Anime Line 891 -->
+<!-- Dark Red Anime Line 892 -->
+<!-- Dark Red Anime Line 893 -->
+<!-- Dark Red Anime Line 894 -->
+<!-- Dark Red Anime Line 895 -->
+<!-- Dark Red Anime Line 896 -->
+<!-- Dark Red Anime Line 897 -->
+<!-- Dark Red Anime Line 898 -->
+<!-- Dark Red Anime Line 899 -->
+<!-- Dark Red Anime Line 900 -->
+<!-- Dark Red Anime Line 901 -->
+<!-- Dark Red Anime Line 902 -->
+<!-- Dark Red Anime Line 903 -->
+<!-- Dark Red Anime Line 904 -->
+<!-- Dark Red Anime Line 905 -->
+<!-- Dark Red Anime Line 906 -->
+<!-- Dark Red Anime Line 907 -->
+<!-- Dark Red Anime Line 908 -->
+<!-- Dark Red Anime Line 909 -->
+<!-- Dark Red Anime Line 910 -->
+<!-- Dark Red Anime Line 911 -->
+<!-- Dark Red Anime Line 912 -->
+<!-- Dark Red Anime Line 913 -->
+<!-- Dark Red Anime Line 914 -->
+<!-- Dark Red Anime Line 915 -->
+<!-- Dark Red Anime Line 916 -->
+<!-- Dark Red Anime Line 917 -->
+<!-- Dark Red Anime Line 918 -->
+<!-- Dark Red Anime Line 919 -->
+<!-- Dark Red Anime Line 920 -->
+<!-- Dark Red Anime Line 921 -->
+<!-- Dark Red Anime Line 922 -->
+<!-- Dark Red Anime Line 923 -->
+<!-- Dark Red Anime Line 924 -->
+<!-- Dark Red Anime Line 925 -->
+<!-- Dark Red Anime Line 926 -->
+<!-- Dark Red Anime Line 927 -->
+<!-- Dark Red Anime Line 928 -->
+<!-- Dark Red Anime Line 929 -->
+<!-- Dark Red Anime Line 930 -->
+<!-- Dark Red Anime Line 931 -->
+<!-- Dark Red Anime Line 932 -->
+<!-- Dark Red Anime Line 933 -->
+<!-- Dark Red Anime Line 934 -->
+<!-- Dark Red Anime Line 935 -->
+<!-- Dark Red Anime Line 936 -->
+<!-- Dark Red Anime Line 937 -->
+<!-- Dark Red Anime Line 938 -->
+<!-- Dark Red Anime Line 939 -->
+<!-- Dark Red Anime Line 940 -->
+<!-- Dark Red Anime Line 941 -->
+<!-- Dark Red Anime Line 942 -->
+<!-- Dark Red Anime Line 943 -->
+<!-- Dark Red Anime Line 944 -->
+<!-- Dark Red Anime Line 945 -->
+<!-- Dark Red Anime Line 946 -->
+<!-- Dark Red Anime Line 947 -->
+<!-- Dark Red Anime Line 948 -->
+<!-- Dark Red Anime Line 949 -->
+<!-- Dark Red Anime Line 950 -->
+<!-- Dark Red Anime Line 951 -->
+<!-- Dark Red Anime Line 952 -->
+<!-- Dark Red Anime Line 953 -->
+<!-- Dark Red Anime Line 954 -->
+<!-- Dark Red Anime Line 955 -->
+<!-- Dark Red Anime Line 956 -->
+<!-- Dark Red Anime Line 957 -->
+<!-- Dark Red Anime Line 958 -->
+<!-- Dark Red Anime Line 959 -->
+<!-- Dark Red Anime Line 960 -->
+<!-- Dark Red Anime Line 961 -->
+<!-- Dark Red Anime Line 962 -->
+<!-- Dark Red Anime Line 963 -->
+<!-- Dark Red Anime Line 964 -->
+<!-- Dark Red Anime Line 965 -->
+<!-- Dark Red Anime Line 966 -->
+<!-- Dark Red Anime Line 967 -->
+<!-- Dark Red Anime Line 968 -->
+<!-- Dark Red Anime Line 969 -->
+<!-- Dark Red Anime Line 970 -->
+<!-- Dark Red Anime Line 971 -->
+<!-- Dark Red Anime Line 972 -->
+<!-- Dark Red Anime Line 973 -->
+<!-- Dark Red Anime Line 974 -->
+<!-- Dark Red Anime Line 975 -->
+<!-- Dark Red Anime Line 976 -->
+<!-- Dark Red Anime Line 977 -->
+<!-- Dark Red Anime Line 978 -->
+<!-- Dark Red Anime Line 979 -->
+<!-- Dark Red Anime Line 980 -->
+<!-- Dark Red Anime Line 981 -->
+<!-- Dark Red Anime Line 982 -->
+<!-- Dark Red Anime Line 983 -->
+<!-- Dark Red Anime Line 984 -->
+<!-- Dark Red Anime Line 985 -->
+<!-- Dark Red Anime Line 986 -->
+<!-- Dark Red Anime Line 987 -->
+<!-- Dark Red Anime Line 988 -->
+<!-- Dark Red Anime Line 989 -->
+<!-- Dark Red Anime Line 990 -->
+<!-- Dark Red Anime Line 991 -->
+<!-- Dark Red Anime Line 992 -->
+<!-- Dark Red Anime Line 993 -->
+<!-- Dark Red Anime Line 994 -->
+<!-- Dark Red Anime Line 995 -->
+<!-- Dark Red Anime Line 996 -->
+<!-- Dark Red Anime Line 997 -->
+<!-- Dark Red Anime Line 998 -->
+<!-- Dark Red Anime Line 999 -->
+<!-- Dark Red Anime Line 1000 -->
+
+</body>
+</html>
