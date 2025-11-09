@@ -1,7 +1,7 @@
 {
-  "name": "CHAMA MINI BOT V3",
+  "name": "LEHAN MINI BOT V3",
   "version": "3.0.0",
-  "description": "𝙲𝙷𝙰𝙼𝙰 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃 WhatsApp Bot with Multi-Number Support",
+  "description": "𝙻𝙴𝙷𝙰𝙽 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃 WhatsApp Bot with Multi-Number Support",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -44,6 +44,6 @@
     "baileys",
     "sula-md"
   ],
-  "author": "chama",
+  "author": "𝙻𝙴𝙷𝙰𝙽",
   "license": "MIT"
 }
